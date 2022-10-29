@@ -4,11 +4,10 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {
+const replaceZAndVFromString = (string) => {
   let replaceSymbol = '*';
-  let result = '';
   replaceZAndVFromString().toLowerCase();
-  const newStr = replaceZAndVFromString.replaceAll('z', replaceSymbol).replaceAll('v', '*');
+  const result = replaceZAndVFromString.replaceAll('z', replaceSymbol).replaceAll('v', '*');
   return result;
 };
 
