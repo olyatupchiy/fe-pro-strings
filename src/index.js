@@ -4,7 +4,13 @@
  * @param {string} string
  * @returns {string}
  */
-export const replaceZAndVFromString = (string) => {};
+export const replaceZAndVFromString = (string) => {
+  let replaceSymbol = '*';
+  let result = '';
+  replaceZAndVFromString().toLowerCase();
+  const newStr = replaceZAndVFromString.replaceAll('z', replaceSymbol).replaceAll('v', '*');
+  return result;
+};
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
