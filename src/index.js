@@ -4,12 +4,22 @@
  * @param {string} string
  * @returns {string}
  */
-const replaceZAndVFromString = (string) => {
-  let replaceSymbol = '*';
-  replaceZAndVFromString().toLowerCase();
-  const result = replaceZAndVFromString.replaceAll('z', replaceSymbol).replaceAll('v', '*');
+export const replaceZAndVFromString = (string) => {
+  let result = "";
+  string.toLowerCase();
+  for (let i = 0; i < string.length; i += 1) {
+    if (string[i] === 'z') {
+      result = `${result}${'*'}`;
+      }
+    else if (string[i] === 'v') {
+      result = `${result}${'*'}`;
+    }
+        else {
+        result = `${result}${string[i]}`;
+        }
+  }
   return result;
-};
+}
 
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
