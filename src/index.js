@@ -31,7 +31,16 @@ export const replaceZAndVFromString = (string) => {
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+export const changeWord = (string, word, newWord) => {
+  let result = '';
+  word.toLowerCase();
+  if (word = 'bohdan') {
+    result = `${result} ${string} ${'vlad'}`;
+  } else {
+    result = `${result} ${string}`;
+  };
+  return result;
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
