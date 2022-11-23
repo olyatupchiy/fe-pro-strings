@@ -6,20 +6,20 @@
  */
 
 export const replaceZAndVFromString = (string) => {
-  let result = "";
-  string.toLowerCase();
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === 'z') {
-      result = `${result}${'*'}`;
-      }
-    else if (string[i] === 'v') {
-      result = `${result}${'*'}`;
-    }
-        else {
-        result = `${result}${string[i]}`;
-        }
+ let result = "";
+ string.toLowerCase();
+ for (let i = 0; i < string.length; i += 1) {
+  if (string[i] === 'z') {
+   result = `${result}${'*'}`;
   }
-  return result;
+  else if (string[i] === 'v') {
+   result = `${result}${'*'}`;
+  }
+  else {
+   result = `${result}${string[i]}`;
+  }
+ }
+ return result;
 }
 
 
@@ -35,14 +35,14 @@ export const replaceZAndVFromString = (string) => {
  */
 
 export const changeWord = (string, word, newWord) => {
-  let result = '';
-  word.toLowerCase();
-  if (word = 'bohdan') {
-    result = `${result} ${string} ${'vlad'}`;
-  } else {
-    result = `${result} ${string}`;
-  };
-  return result;
+ let result = '';
+ word.toLowerCase();
+ if (word = 'bohdan') {
+  result = `${result} ${string} ${'vlad'}`;
+ } else {
+  result = `${result} ${string}`;
+ };
+ return result;
 };
 
 /**
@@ -52,7 +52,7 @@ export const changeWord = (string, word, newWord) => {
  * @returns {string}
  */
 export const truncate = (string, length) => {
-  return string.substring(0, length);
+ return string.substring(0, length);
 };
 console.log(truncate("test", 3));
 
@@ -68,13 +68,13 @@ console.log(truncate("test", 3));
  * @returns {number}
  */
 export const quantityOfSymbols = (string, symbol) => {
-  let quantity = 0;
-  for (let i = 0; i < string.length; i +=1) {
-    if (string[i] === symbol) {
-      quantity++;
-    }
+ let quantity = 0;
+ for (let i = 0; i < string.length; i +=1) {
+  if (string[i] === symbol) {
+   quantity++;
   }
-  return quantity;
+ }
+ return quantity;
 };
 
 /**
@@ -93,16 +93,16 @@ export const quantityOfSymbols = (string, symbol) => {
  * @returns {number}
  */
 export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
-  let quantityOfSym = 0;
-  let index = 0;
-  while (true) {
-    let num = string.indexOf(symbol, 0);
-    if (num >= 0) {
-      index = num + 1;
-      quantityOfSym++;
-    } else if (num === -1) {
-      break;
-    }
+ let quantityOfSym = 0;
+ let index = 0;
+ while (true) {
+  let num = string.indexOf(symbol, 0);
+  if (num >= 0) {
+   index = num + 1;
+   quantityOfSym++;
+  } else if (num === -1) {
+   break;
   }
-  return quantityOfSym;
+ }
+ return quantityOfSym;
 };
