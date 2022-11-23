@@ -23,11 +23,6 @@ export const replaceZAndVFromString = (string) => {
 }
 
 
-
-
-
-
-
 /**
  * Функция должна принять 3 аргумента и все строки. Мы передаем строку,
  * вторая строка это искомое слово, третья это то слово, на которое мы должны
@@ -38,7 +33,17 @@ export const replaceZAndVFromString = (string) => {
  * @param {string} newWord
  * @returns {string}
  */
-export const changeWord = (string, word, newWord) => {};
+
+export const changeWord = (string, word, newWord) => {
+  let result = '';
+  word.toLowerCase();
+  if (word = 'bohdan') {
+    result = `${result} ${string} ${'vlad'}`;
+  } else {
+    result = `${result} ${string}`;
+  };
+  return result;
+};
 
 /**
  * Должна вернуть строку(1 аргумент) на обрезанную по длине(2 аргумент, число)
@@ -46,7 +51,10 @@ export const changeWord = (string, word, newWord) => {};
  * @param {number} length
  * @returns {string}
  */
-export const truncate = (string, length) => {};
+export const truncate = (string, length) => {
+  return string.substring(0, length);
+};
+console.log(truncate("test", 3));
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -59,7 +67,15 @@ export const truncate = (string, length) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbols = (string, symbol) => {};
+export const quantityOfSymbols = (string, symbol) => {
+  let quantity = 0;
+  for (let i = 0; i < string.length; i +=1) {
+    if (string[i] === symbol) {
+      quantity++;
+    }
+  }
+  return quantity;
+};
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
@@ -76,4 +92,17 @@ export const quantityOfSymbols = (string, symbol) => {};
  * @param {string} symbol
  * @returns {number}
  */
-export const quantityOfSymbolsWithIndexOf = (string, symbol) => {};
+export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
+  let quantityOfSym = 0;
+  let index = 0;
+  while (true) {
+    let num = string.indexOf(symbol, 0);
+    if (num >= 0) {
+      index = num + 1;
+      quantityOfSym++;
+    } else if (num === -1) {
+      break;
+    }
+  }
+  return quantityOfSym;
+};
