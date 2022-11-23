@@ -54,7 +54,6 @@ export const changeWord = (string, word, newWord) => {
 export const truncate = (string, length) => {
  return string.substring(0, length);
 };
-console.log(truncate("test", 3));
 
 /**
  * Принимает строку в первом аргументе, и символ во втором
