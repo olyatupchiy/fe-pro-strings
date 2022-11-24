@@ -95,11 +95,11 @@ export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
  let quantityOfSym = 0;
  let index = 0;
  while (true) {
-  let num = string.indexOf(symbol, 0);
-  if (num >= 0) {
-   index = num + 1;
+  index = string.indexOf(symbol, index);
+  if (index >= 0) {
+   index = index + 1;
    quantityOfSym++;
-  } else if (num === -1) {
+  } else if (index === -1) {
    break;
   }
  }
