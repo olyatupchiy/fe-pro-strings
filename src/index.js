@@ -35,14 +35,7 @@ export const replaceZAndVFromString = (string) => {
  */
 
 export const changeWord = (string, word, newWord) => {
- let result = '';
- word.toLowerCase();
- if (word = 'bohdan') {
-  result = `${result} ${string} ${'vlad'}`;
- } else {
-  result = `${result} ${string}`;
- };
- return result;
+ return string.replace(word, newWord);
 };
 
 /**
@@ -67,13 +60,15 @@ export const truncate = (string, length) => {
  * @returns {number}
  */
 export const quantityOfSymbols = (string, symbol) => {
- let quantity = 0;
- for (let i = 0; i < string.length; i +=1) {
-  if (string[i] === symbol) {
-   quantity++;
+ let amount = 0;
+ let lowerString = string.toLowerCase();
+ let lowerSymbol = symbol.toLowerCase();
+ for (let num = 0; num < lowerString.length; num++) {
+  if (lowerString[num] === lowerSymbol) {
+   amount++;
   }
  }
- return quantity;
+ return amount;
 };
 
 /**
@@ -92,16 +87,16 @@ export const quantityOfSymbols = (string, symbol) => {
  * @returns {number}
  */
 export const quantityOfSymbolsWithIndexOf = (string, symbol) => {
- let quantityOfSym = 0;
+ let quantity = 0;
  let index = 0;
  while (true) {
-  index = string.indexOf(symbol, index);
-  if (index >= 0) {
-   index = index + 1;
-   quantityOfSym++;
-  } else if (index === -1) {
+  let idx = string.toLocaleLowerCase().indexOf(symbol.toLowerCase(), index);
+  if (idx >= 0) {
+   index = idx + 1;
+   quantity++;
+  } else if (idx === -1) {
    break;
   }
  }
- return quantityOfSym;
+ return quantity;
 };
